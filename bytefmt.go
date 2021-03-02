@@ -2,8 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// Package bytefmt provides Bytes type whats implements fmt.Formatter interface
-
+// Package bytefmt provides Bytes type whats implements fmt.Formatter interface.
 package bytefmt
 
 import (
