@@ -57,9 +57,9 @@ func TestNamesInitialize(t *testing.T) {
 			t.Parallel()
 
 			b := bytefmt.New(0, tt.names...)
-			get := b.Names()
-			if strings.Join(get, "") != strings.Join(tt.want, "") {
-				t.Errorf("\nwant name: %#v\n get name: %#v\ntest: %s", tt.want, get, tt.line)
+			got := b.Names()
+			if strings.Join(got, "") != strings.Join(tt.want, "") {
+				t.Errorf("\nwant name: %#v\n got name: %#v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -73,9 +73,9 @@ func TestNamesUpdate(t *testing.T) {
 			t.Parallel()
 
 			b := bytefmt.New(0)
-			get := b.Names(tt.names...)
-			if strings.Join(get, "") != strings.Join(tt.want, "") {
-				t.Errorf("\nwant name: %#v\n get name %#v\ntest: %s", tt.want, get, tt.line)
+			got := b.Names(tt.names...)
+			if strings.Join(got, "") != strings.Join(tt.want, "") {
+				t.Errorf("\nwant name: %#v\n got name %#v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -146,9 +146,9 @@ func TestBytesKilobytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Kilobytes()
-			if get != tt.want {
-				t.Errorf("\nwant kilobytes: %v\n get expected: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Kilobytes()
+			if got != tt.want {
+				t.Errorf("\nwant kilobytes: %v\n got expected: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -203,9 +203,9 @@ func TestBytesMegabytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Megabytes()
-			if get != tt.want {
-				t.Errorf("\nwant megabytes: %v\n get megabytes: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Megabytes()
+			if got != tt.want {
+				t.Errorf("\nwant megabytes: %v\n got megabytes: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -259,9 +259,9 @@ func TestBytesGigabytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Gigabytes()
-			if get != tt.want {
-				t.Errorf("\nwant gigabytes: %v\n get gigabytes: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Gigabytes()
+			if got != tt.want {
+				t.Errorf("\nwant gigabytes: %v\n got gigabytes: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -315,9 +315,9 @@ func TestBytesTerabytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Terabytes()
-			if get != tt.want {
-				t.Errorf("\nwant terabytes: %v\n get terabytes: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Terabytes()
+			if got != tt.want {
+				t.Errorf("\nwant terabytes: %v\n got terabytes: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -371,9 +371,9 @@ func TestBytesPetabytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Petabytes()
-			if get != tt.want {
-				t.Errorf("\nwant petabytes: %v\n get petabytes: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Petabytes()
+			if got != tt.want {
+				t.Errorf("\nwant petabytes: %v\n got petabytes: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -427,9 +427,9 @@ func TestBytesExabytes(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.Bytes{Value: tt.bytes}.Exabytes()
-			if get != tt.want {
-				t.Errorf("\nwant exabytes: %v\n get exabytes: %v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.Bytes{Value: tt.bytes}.Exabytes()
+			if got != tt.want {
+				t.Errorf("\nwant exabytes: %v\n got exabytes: %v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -488,9 +488,9 @@ func TestBytesString(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := bytefmt.New(tt.bytes).String()
-			if get != tt.want {
-				t.Errorf("\nwant string: %#v\n get string: %#v\ntest: %s", tt.want, get, tt.line)
+			got := bytefmt.New(tt.bytes).String()
+			if got != tt.want {
+				t.Errorf("\nwant string: %#v\n got string: %#v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
@@ -2208,9 +2208,9 @@ func TestBytesFormat(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name+" "+tt.format+" "+strconv.FormatUint(tt.bytes, 10), func(t *testing.T) {
 			t.Parallel()
 
-			get := fmt.Sprintf(tt.format, bytefmt.New(tt.bytes, tt.names...))
-			if get != tt.want {
-				t.Errorf("\nwant kilobytes: %#v\n get kilobytes: %#v\ntest: %s", tt.want, get, tt.line)
+			got := fmt.Sprintf(tt.format, bytefmt.New(tt.bytes, tt.names...))
+			if got != tt.want {
+				t.Errorf("\nwant kilobytes: %#v\n got kilobytes: %#v\ntest: %s", tt.want, got, tt.line)
 			}
 		})
 	}
