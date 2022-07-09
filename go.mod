@@ -1,3 +1,3 @@
-module github.com/danil/bytefmt
+module github.com/pfmt/bytefmt
 
-go 1.15
+go 1.17
